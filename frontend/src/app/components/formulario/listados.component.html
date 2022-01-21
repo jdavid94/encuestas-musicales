@@ -1,0 +1,26 @@
+<div class="card text-dark bg-light mb-3">
+    <div class="card-header bg-info">{{title}}</div>
+    <div class="card-body">
+        <div class="alert alert-info" *ngIf="formularios?.length==0">Informacion No Encontrada</div>
+        <table class="table table-hover table-striped" *ngIf="formularios?.length>0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Respuesta</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let form of formularios">
+                    <td>{{form.id}}</td>
+                    <td>{{form.email}}</td>
+                    <td>{{form.opcion.genero}}</td>
+                    <td>{{form.fechaCreacion | date: 'yyyy/MM/dd'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <mat-paginator class="float-left mx-2" [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual" [pageSizeOptions]="pageSizeOptions" (page)="paginator($event)" showFirstLastButtons aria-label="Selecione Pagina">
+        </mat-paginator>
+    </div>
+</div>
