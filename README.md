@@ -26,6 +26,11 @@ Para ejecutar el backend ejecuta:
 $./backend/mvnw spring-boot:run
 ```
 
+Antes instalar Node Module
+
+```bash
+$ ./frontend/npm install
+```
 Para ejecutar el frontend ejecuta:
 
 ```bash
